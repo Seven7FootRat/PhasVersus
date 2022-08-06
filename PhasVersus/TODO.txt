@@ -1,0 +1,10 @@
+﻿#TODO
+
+-Clean up GUI and make it look sexy :)
+-test in mp
+
+-Fix some gay ass bugs
+-test in mp
+
+-Make ghost player completely invisible so that others can't see em
+-test in mp

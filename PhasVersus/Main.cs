@@ -18,7 +18,7 @@ namespace PhasVersus
     {
         public const string ModName = "PhasVersus";
         public const string ModAuthor = "Seven7FootRat/waffleishis";
-        public const string ModVersion = "1.2.5";
+        public const string ModVersion = "1.3.0";
         public const string GameName = "Phasmophobia";
         public const string GameStudio = "Kinetic Games";
     }

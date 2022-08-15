@@ -402,16 +402,13 @@ MelonLogger.Msg("Debuging/using test version");
                 }
             }
             else
-            {
-                if (G.isInGame)
-                {
+            { // removing the check for isInGame for now as I do not yet have a solution to the chams not working when the check is active
                     foreach (Renderer renderer in __instance.GetComponentsInChildren<Renderer>())
                     {
                         renderer.material.SetColor("_Color", Color.green);
                         renderer.material.shader = Shader.Find("Hidden/Internal-Colored");
                         renderer.material.SetInt("_ZTest", 8);
                     }
-                }
             }
         }
     }

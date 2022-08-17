@@ -97,33 +97,6 @@ MelonLogger.Msg("Debuging/using test version");
 
             GUI.Label(new Rect(0, 0, 100, 25), "PhasVersus");
 
-            GUI.color = Color.magenta;
-
-            if (O.ghost != null)
-            {
-                GUI.Label(new Rect(0, 50, 200, 25), "Name: " + O.ghost.field_Public_GhostInfo_0.field_Public_ValueTypePublicSealedObLiOb1InBoStObInBoUnique_0.field_Public_String_0);
-
-                GUI.Label(new Rect(0, 75, 100, 25), "Age: " + O.ghost.field_Public_GhostInfo_0.field_Public_ValueTypePublicSealedObLiOb1InBoStObInBoUnique_0.field_Public_Int32_0.ToString());
-
-                GUI.Label(new Rect(0, 100, 100, 25), "Type: " + O.ghost.field_Public_GhostInfo_0.field_Public_ValueTypePublicSealedObLiOb1InBoStObInBoUnique_0.field_Public_EnumNPublicSealedvaSpWrPhPoBaJiMaReShUnique_0.ToString());
-
-                GUI.Label(new Rect(0, 125, 200, 25), "Difficulty: " + G.difficulty.ToString());
-            }
-
-            if (O.ghost != null && O.ghost.field_Public_EnumNPublicSealedvaidwahufalidothfuapUnique_0 == GhostAI.EnumNPublicSealedvaidwahufalidothfuapUnique.hunting)
-            {
-                if (UnityEngine.Screen.width != null && G.isStyleSet)
-                {
-                    // I love meth
-                    var width = UnityEngine.Screen.width / 4;
-                    var xpos = (UnityEngine.Screen.width / 2) - (width / 2);
-                    var height = UnityEngine.Screen.height / 6.5f;
-                    var ypos = height;
-
-                    GUI.Label(new Rect(xpos, height, width, height), "HUNTING", G.myStyle);
-                }
-            }
-
 #if DEBUG
             if (G.curScene != null)
             {

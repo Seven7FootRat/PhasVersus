@@ -26,6 +26,9 @@ namespace PhasVersus
         public static GUIStyle myStyle;
         public static bool isStyleSet = false;
 
+        public static bool alreadyForcingHunt = false;
+        public static bool alreadyForcingAppear = false;
+
         public static IEnumerator SetGlobals()
         {
             CoR = true;
@@ -34,6 +37,7 @@ namespace PhasVersus
             {
                 myStyle = new GUIStyle();
 
+                myStyle.normal.textColor = Color.red;
                 myStyle.fontSize = 35;
                 myStyle.alignment = TextAnchor.MiddleCenter;
                 myStyle.richText = true;

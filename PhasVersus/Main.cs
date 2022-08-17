@@ -18,7 +18,7 @@ namespace PhasVersus
     {
         public const string ModName = "PhasVersus";
         public const string ModAuthor = "Seven7FootRat/waffleishis";
-        public const string ModVersion = "1.3.0";
+        public const string ModVersion = "1.3.1";
         public const string GameName = "Phasmophobia";
         public const string GameStudio = "Kinetic Games";
     }
@@ -69,12 +69,12 @@ MelonLogger.Msg("Debuging/using test version");
                     }
                 }
 
-                if (keyboard.hKey.wasPressedThisFrame)
+                if (keyboard.hKey.wasPressedThisFrame && !G.alreadyForcingHunt)
                 {
                     MelonCoroutines.Start(DoHunt());
                 }
 
-                if (keyboard.qKey.wasPressedThisFrame)
+                if (keyboard.qKey.wasPressedThisFrame && !G.alreadyForcingAppear)
                 {
                     MelonCoroutines.Start(DoAppear());
                 }
@@ -120,7 +120,7 @@ MelonLogger.Msg("Debuging/using test version");
                     var height = UnityEngine.Screen.height / 6.5f;
                     var ypos = height;
 
-                    GUI.Label(new Rect(xpos, height, width, height), "<color=\"red\">HUNTING ()<\\color>", G.myStyle);
+                    GUI.Label(new Rect(xpos, height, width, height), "HUNTING", G.myStyle);
                 }
             }
 
@@ -136,6 +136,7 @@ MelonLogger.Msg("Debuging/using test version");
         // This function is unnessesarily big as shit...           Too bad!!!
         public IEnumerator DoHunt()
         {
+            G.alreadyForcingHunt = true;
             if (O.ghost != null)
             {
                 MelonLogger.Msg("DoHunt called");
@@ -307,20 +308,21 @@ MelonLogger.Msg("Debuging/using test version");
                         }
                         break;
                 }
-                yield break;
             }
+            G.alreadyForcingHunt = false;
         }
 
         public IEnumerator DoAppear()
         {
+            G.alreadyForcingAppear = true;
             if (O.ghost != null)
             {
                 MelonLogger.Msg("DoAppear called");
                 O.ghost.Appear();
                 yield return new WaitForSeconds(3f);
                 O.ghost.UnAppear();
-                yield break;
             }
+            G.alreadyForcingAppear = false;
         }
 
         public void DoAbility()

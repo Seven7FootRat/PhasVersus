@@ -3,7 +3,7 @@
 -Clean up GUI and make it look sexy :)
 -test in mp
 
--Fix some gay ass bugs
+-Fix some gay ass bugs : Fix color on hunting label
 -test in mp
 
 -Make ghost player completely invisible so that others can't see em
